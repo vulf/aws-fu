@@ -18,4 +18,5 @@ Resources:                                     # https://docs.aws.amazon.com/AWS
           Ebs:
             DeleteOnTermination: true
             VolumeSize: 8
+# Security groups, IAM InstanceProfile
 ...
