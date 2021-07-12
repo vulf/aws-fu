@@ -1,0 +1,21 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Description: My first template.
+Metadata:
+  Instances:
+    TrainingInstance: Instance creation for training purposes.
+Resources:                                     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+  TrainingInstance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: "ami-0b0af3577fe5e3532"          # RHEL 8 AMI
+      InstanceType: t2.micro
+      KeyName: kp1
+      AvailabilityZone: us-east-1a
+      PrivateIpAddress: 172.31.80.5
+      BlockDeviceMappings:
+        - DeviceName: /dev/sdh
+          Ebs:
+            DeleteOnTermination: true
+            VolumeSize: 8
+...
